@@ -33,3 +33,106 @@ Conclusion
 The Crop Yield Prediction Model is a significant advancement in leveraging Artificial Intelligence for agriculture. By providing accurate predictions, it empowers sustainable farming practices and resource optimization, ultimately benefiting farmers and the agricultural community.
 
 AI-Powered Forecasting for Agricultural Productivity uses a Feed-Forward Neural Network (FNN) to predict crop yields with 97% accuracy. Built with TensorFlow, PyTorch, and Flask, it analyzes soil and environmental data to provide real-time crop recommendations, enhancing decision-making and boosting agricultural efficiency.
+
+#SYSTEM WORKFLOW
+# System Workflow
+
+```text
+                 AI-Powered Crop Recommendation System
+
+┌──────────────────────────────────────────────────────┐
+│              Crop Recommendation Dataset             │
+│      (2200 Records, 7 Features, 22 Crop Classes)     │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│            Data Cleaning & Preprocessing             │
+│  • Check Missing Values                              │
+│  • Feature Selection                                 │
+│  • Label Encoding                                    │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│               Train-Test Split (70:30)               │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│                 Feature Scaling                      │
+│        StandardScaler (Fit on Train Data)            │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│          Feed Forward Neural Network (FNN)           │
+│                                                      │
+│  Input Layer (7 Features)                            │
+│          ↓                                           │
+│  Dense Layer (256, tanh)                             │
+│          ↓                                           │
+│  Dense Layer (128, tanh)                             │
+│          ↓                                           │
+│  Output Layer (22, softmax)                          │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│                 Model Training                       │
+│  • Adam Optimizer                                    │
+│  • Batch Size = 32                                   │
+│  • Epochs = 20                                       │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│                 Model Evaluation                     │
+│  • Training Accuracy ≈ 97%                           │
+│  • Testing Accuracy ≈ 96%                            │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│                Model Persistence                     │
+│  • crop_model.keras                                  │
+│  • scaler.pkl                                        │
+│  • label_encoder.pkl                                 │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│               Flask Web Application                  │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│                 User Input                           │
+│  N, P, K, Temperature, Humidity, pH, Rainfall        │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│             Data Standardization                     │
+│         Using Saved StandardScaler                   │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│               Crop Prediction                        │
+│          Using Trained FNN Model                     │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│              Label Decoding                          │
+│      Convert Class Index → Crop Name                 │
+└──────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│            Recommended Crop Output                   │
+│    Rice | Cotton | Banana | Mango | Coffee ...       │
+└──────────────────────────────────────────────────────┘
+```
+
