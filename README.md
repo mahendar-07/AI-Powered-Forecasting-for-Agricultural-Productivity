@@ -135,4 +135,18 @@ AI-Powered Forecasting for Agricultural Productivity uses a Feed-Forward Neural 
 │    Rice | Cotton | Banana | Mango | Coffee ...       │
 └──────────────────────────────────────────────────────┘
 ```
-
+# Tech Stack
+Programming Language:
+    Python(3.12.6)
+Machine Learning & Deep Learning :
+    TensorFlow / Keras, Scikit-Learn,Data Processing,Pandas,NumPy
+Data Visualization:
+    Matplotlib,Seaborn
+Web Framework:
+    Flask
+Model Persistence:
+    Pickle (scaler.pkl, label_encoder.pkl),Keras Model (crop_model.keras)
+Development Tools:
+    VS Code,Git,GitHub
+Dataset:
+Crop Recommendation Dataset (2200 records, 22 crop classes)
